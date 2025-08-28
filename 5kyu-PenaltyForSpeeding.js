@@ -1,0 +1,25 @@
+//Description:
+// You have been speeding on a motorway and a police car had to stop you. The policeman is a funny guy that likes to play games. Before issuing penalty charge notice he gives you a choice to change your penalty.
+
+// Your penalty charge is a combination of numbers like: speed of your car, speed limit in the area, speed of the police car chasing you, the number of police cars involved, etc. So, your task is to combine the given numbers and make the penalty charge to be as small as possible.
+
+// For example, if you are given numbers [45, 30, 50, 1] your best choice is 1304550
+
+// Examples:
+
+// ['45', '30', '50', '1'] => '1304550'
+
+// ['100', '10', '1'] => '100101'
+
+// ['32', '3'] => '323'
+
+//Solution:
+function penalty(a_list) {
+  return a_list.sort((a, b) => (a + b > b + a ? 1 : -1)).join('')
+}
+
+// if (a + b > b + a) return 1;   // значит b идёт перед a
+// else return -1;                // a остаётся перед b
+// Возврат 1 → b ставится перед a в отсортированном массиве.
+
+// Возврат -1 → a остаётся перед b.
